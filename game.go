@@ -1,18 +1,20 @@
 
 package main
 
+// Игра Угадай слово
+
 import "fmt"
 
 func main() {
 	words := []string{"тест", "привет", "мир"}
 
-	//LOOP:
+	
 	for _, word := range words {
 
 		letters := []rune(word)      // буквы слова
 		guess_map := map[rune]bool{} // карта открытых букв
 
-		fmt.Println("Новое слово, букв: ", len(letters))
+		fmt.Println("Новое слово, количество букв: ", len(letters))
 		for {
 			var input string
 
@@ -30,7 +32,7 @@ func main() {
 
 			// д.б. введен один символ
 			if len([]rune(input)) != 1 {
-				//fmt.Pr
+				//
 				continue
 			}
 			// введенная буква
@@ -54,7 +56,7 @@ func main() {
 			fmt.Println(string(progress))
 
 			if string(progress) == word {
-				//fmt.Println("слово отгадано!")
+				fmt.Println("слово отгадано!")
 				break
 			}
 		}
